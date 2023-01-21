@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[rais={buwa}]</title>
+    <link rel="icon" href="./img/shlyapa.jpg">
+    <style type="text/css">
+        .select{
+            width: 100px;
+            height: 30px;
+            margin-left: 50px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+<div class="div">
+    Viloyat
+    <select class="select" id="vil">
+        <option>Tanlang...</option>
+        <option value="60">Andijon</option>
+        <option value="50">Namangan</option>
+        <option value="40">Fargona</option>
+        <option value="01">Toshkent</option>
+    </select>
+    <br>
+    <br>
+    Raqam
+    <select class="select" id="raqam">
+        <option>Tanlang...</option>
+        <option value="555">555</option>
+        <option value="333">333</option>
+        <option value="222">222</option>
+        <option value="122">122</option>
+        <option value="344">344</option>
+        <option value="199">199</option>
+        <option value="259">259</option>
+        <option value="657">657</option>
+        <option value="328">328</option>
+    </select>   <br>
+    <br>
+    Harfi
+    <select class="select" id="mansab">
+        <option>Tanlang...</option>
+        <option value="yuridik">yuridik</option>
+        <option value="jismoniy">jismoniy</option>
+    </select> <br> 
+    <br>
+    <button class="select" id="hisobla">Hisobla</button>
+    <h1>Narxi: <span id="narx"></span></h1>
+    <h1>Avtoraqam: <span id="avtoraqam"></span></h1>
+</div>            
+<script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#hisobla").click(function(){
+            let vil = $("#vil").val()
+            let raqam = $("#raqam").val()
+            let mansab = $("#mansab").val()
+
+            let narx =0
+            let text = 0
+      
+            if(raqam == 555 || raqam == 333 || raqam == 222 ){
+             narx = 50000000
+            }
+            else if(raqam == 122 || raqam == 344 || raqam ==199 ){
+                narx = 5000000
+            }
+
+            else if (raqam == 259 || raqam == 657 || raqam == 328) {
+                narx = 500000
+            }
+            if(mansab=='yuridik'){
+                text = vil + " | " + raqam + " " +  "AAA"
+            }
+            else{
+                text = vil + " | A" + raqam + " " + "AA" 
+            }
+             $("#narx").html(narx)
+             $("#avtoraqam").html(text)
+        })
+    })
+</script>
+</body>
+</html>
